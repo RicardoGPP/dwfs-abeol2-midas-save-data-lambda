@@ -5,7 +5,7 @@ import knexconfig from './knexfile.js';
 import knex from 'knex';
 
 /**
- * Creates a success responde with status 200 (OK).
+ * Creates a success response with status 200 (OK).
  * 
  * @param {String} message A message describing the execution result.
  * @returns A HTTP-prepared response.
@@ -18,7 +18,7 @@ const success = (message) => {
 };
 
 /**
- * Creates a failure responde with status 500 (Internal Server Error).
+ * Creates a failure response with status 500 (Internal Server Error).
  * 
  * @param {Object} error The error thrown during the execution.
  * @returns A HTTP-prepared response.
