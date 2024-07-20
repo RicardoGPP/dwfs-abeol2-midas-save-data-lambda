@@ -6,7 +6,7 @@ exports.up = function(knex) {
         table.string('street', 255);
         table.string('number', 50);
         table.string('neighborhood', 255);
-        table.string('zip_code', 20);
+        table.string('zipCode', 20);
         table.string('city', 255);
         table.string('state', 2);
         table.decimal('latitude', 9, 6);
