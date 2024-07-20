@@ -1,5 +1,3 @@
-const knexconfig = require('../knexfile');
-const knex = require('knex')(knexconfig);
 const table = 'price';
 
 /**
@@ -8,17 +6,26 @@ const table = 'price';
 class PriceRepository {
 
     /**
+     * Creates a price repository.
+     * 
+     * @param {Object} conn The database connection.
+     */
+    constructor(conn) {
+        this.conn = conn;
+    }
+
+    /**
      * Updates or inserts a price.
      * 
      * @param {Object} price The price to be upserted.
      * @returns A promise that resolves to the upserted price.
      */
     upsert(price) {
-        return knex(table)
+        return this.conn(table)
             .insert(price)
             .onConflict(['supermarketId', 'productId', 'date'])
             .merge()
-            .then(() => knex(table)
+            .then(() => this.conn(table)
                 .select('*')
                 .where({
                     supermarketId: price.supermarketId,

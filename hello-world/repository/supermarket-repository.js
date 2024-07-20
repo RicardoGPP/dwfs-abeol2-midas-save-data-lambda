@@ -1,5 +1,3 @@
-const knexconfig = require('./../knexfile');
-const knex = require('knex')(knexconfig);
 const table = 'supermarket';
 
 /**
@@ -8,17 +6,26 @@ const table = 'supermarket';
 class SupermarketRepository {
 
     /**
+     * Creates a supermarket repository.
+     * 
+     * @param {Object} conn The database connection.
+     */
+    constructor(conn) {
+        this.conn = conn;
+    }
+
+    /**
      * Updates or inserts a supermarket.
      * 
      * @param {Object} supermarket The supermarket to be upserted.
      * @returns A promise that resolves to the upserted supermarket.
      */
     upsert(supermarket) {
-        return knex(table)
+        return this.conn(table)
             .insert(supermarket)
             .onConflict('cnpj')
             .merge()
-            .then(() => knex(table)
+            .then(() => this.conn(table)
                 .select('*')
                 .where({cnpj: supermarket.cnpj})
                 .first()
