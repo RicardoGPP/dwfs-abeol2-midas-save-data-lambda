@@ -1,4 +1,4 @@
-# Midas - Scrapper
+# Midas - Save data
 
 Este projeto faz parte do trabalho da disciplina de Arquitetura de Backend do curso de pós-graduação em Desenvolvimento Web FullStack da PUC Minas. Trata de um tópico, fila e função lambda a serem executados na AWS para salvar os dados de supermercado, produto e preço recuperados de uma NFC-e do estado de Minas Gerais à partir do processo de [scrapping](https://github.com/RicardoGPP/dwfs-abeol2-midas-scrapper-lambda) realizado anteriormente.
 
