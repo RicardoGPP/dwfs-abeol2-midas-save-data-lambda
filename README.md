@@ -8,10 +8,10 @@ Este projeto faz parte do trabalho da disciplina de Arquitetura de Backend do cu
  - [app.mjs](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/app.mjs): Faz a tratativa de eventos de save-data;
  - [knexfile.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/knexfile.js): Contém a configuração necessária para a conexão com o banco de dados;
  - [migrations](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/migration/): Contém as migrações para criação das tabelas do banco de dados;
- - [data-mapper.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/mapper/data-mapper.js): Contém funções para conversão de modelo;
- - [supermarket-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/supermarket-repository.js): Repositório de supermercados;
- - [product-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/product-repository.js): Repositório de produtos;
- - [price-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/price-repository.js): Repositório de preços.
+ - [data-mapper.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/mapper/data-mapper.mjs): Contém funções para conversão de modelo;
+ - [supermarket-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/supermarket-repository.mjs): Repositório de supermercados;
+ - [product-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/product-repository.mjs): Repositório de produtos;
+ - [price-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/price-repository.mjs): Repositório de preços.
 
 ## Funcionamento
 
