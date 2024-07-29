@@ -19,4 +19,4 @@ O processo de salvamento tem a função de receber os dados da NFC-e obtidos atr
 
 ## Diagrama relacional do banco de dados
 
-![Midas - Diagrama relacional](https://github.com/user-attachments/assets/697df4db-a11a-43d0-a488-5659c34b468b)
+![Midas - Diagrama relacional](https://github.com/user-attachments/assets/4c5fd71a-7e5a-42c8-beae-865e805ae84a)
