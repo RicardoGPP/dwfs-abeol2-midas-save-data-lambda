@@ -8,6 +8,6 @@ module.exports = {
         ssl: true
     },
     migrations: {
-        directory: './db/migrations'
+        directory: './src/migration'
     }
 };

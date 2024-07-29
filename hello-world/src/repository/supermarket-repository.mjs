@@ -33,4 +33,4 @@ class SupermarketRepository {
     }
 }
 
-module.exports = SupermarketRepository;
+export default SupermarketRepository;

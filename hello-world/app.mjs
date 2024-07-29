@@ -1,6 +1,7 @@
-import SupermarketRepository from './repository/supermarket-repository.js';
-import ProductRepository from './repository/product-repository.js';
-import PriceRepository from './repository/price-repository.js';
+import { toSupermarket, toProduct, toPrice } from './src/mapper/data-mapper.mjs';
+import SupermarketRepository from './src/repository/supermarket-repository.mjs';
+import ProductRepository from './src/repository/product-repository.mjs';
+import PriceRepository from './src/repository/price-repository.mjs';
 import knexconfig from './knexfile.js';
 import knex from 'knex';
 
@@ -35,64 +36,12 @@ const failure = (error) => {
 };
 
 /**
- * Converts the message data into a supermarket.
- * 
- * @param {Object} data The message data to be converted.
- * @returns The converted supermarket.
- */
-const toSupermarket = (data) => {
-    return {
-        cnpj: data.cnpj,
-        name: data.companyName,
-        street: data.address.street,
-        number: data.address.number,
-        neighborhood: data.address.neighborhood,
-        zipCode: data.address.zipCode,
-        city: data.address.city,
-        state: data.address.state,
-        latitude: data.address.lat,
-        longitude: data.address.lng
-    };
-}
-
-/**
- * Converts the message data item into a product.
- * 
- * @param {Object} item The message data item to be converted.
- * @returns The converted product.
- */
-const toProduct = (item) => {
-    return {
-        code: item.code,
-        name: item.product,
-        unit: item.unit
-    };
-};
-
-/**
- * Converts the supermarket, product and message data item into a price.
- * 
- * @param {Object} supermarket The supermarket to be converted.
- * @param {Object} product The product to be converted.
- * @param {Object} item The message data item to be converted.
- * @returns The converted price.
- */
-const toPrice = (supermarket, product, item) => {
-    return {
-        supermarketId: supermarket.id,
-        productId: product.id,
-        date: new Date().toISOString(),
-        price: item.price
-    };
-};
-
-/**
  * Handles a save-data event.
  * 
  * @param {Object} event The event to be handled.
  * @returns A HTTP-prepared response.
  */
-export const lambdaHandler = async (event) => {
+const lambdaHandler = async (event) => {
     let conn = null;
 
     try {
@@ -115,10 +64,15 @@ export const lambdaHandler = async (event) => {
         const priceRepository = new PriceRepository(conn);
         const supermarketRepository = new SupermarketRepository(conn);
 
-        const supermarket = await supermarketRepository.upsert(toSupermarket(data));
+        let supermarket = toSupermarket(data);
+        supermarket = await supermarketRepository.upsert(supermarket);
+
         for (let item of data.products) {
-            const product = await productRepository.upsert(toProduct(item));
-            await priceRepository.upsert(toPrice(supermarket, product, item));
+            let product = toProduct(item);
+            product = await productRepository.upsert(product);
+
+            let price = toPrice(supermarket, product, item);
+            await priceRepository.upsert(price);
         }
 
         return success('The message has been successfully processed!');
@@ -130,3 +84,5 @@ export const lambdaHandler = async (event) => {
         }
     }
 };
+
+export { lambdaHandler };

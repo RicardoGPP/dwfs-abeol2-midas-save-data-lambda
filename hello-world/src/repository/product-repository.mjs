@@ -33,4 +33,4 @@ class ProductRepository {
     }
 }
 
-module.exports = ProductRepository;
+export default ProductRepository;

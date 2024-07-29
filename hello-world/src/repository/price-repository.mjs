@@ -37,4 +37,4 @@ class PriceRepository {
     }
 }
 
-module.exports = PriceRepository;
+export default PriceRepository;
