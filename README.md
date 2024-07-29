@@ -16,3 +16,7 @@ Este projeto faz parte do trabalho da disciplina de Arquitetura de Backend do cu
 ## Funcionamento
 
 O processo de salvamento tem a função de receber os dados da NFC-e obtidos através de seu scrapping e então persistí-los no banco de dados. Esta é a segunda etapa do sistema **Midas**, que tem por objetivo ser um indexador de preços de forma a ajudar o usuário a decidir onde fazer suas compras com base em um histórico de compras já realizadas por outros usuários.
+
+## Diagrama relacional do banco de dados
+
+![Midas - Diagrama relacional](https://github.com/user-attachments/assets/697df4db-a11a-43d0-a488-5659c34b468b)
