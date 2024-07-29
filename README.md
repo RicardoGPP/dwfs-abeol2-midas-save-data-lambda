@@ -5,12 +5,13 @@ Este projeto faz parte do trabalho da disciplina de Arquitetura de Backend do cu
 ## Principais arquivos e diretórios do projeto
 
  - [template.yaml](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/template.yaml): Descreve os recursos a serem provisionados na AWS;
- - [app.mjs](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/app.mjs): Faz a tratativa de eventos de save-data;
- - [knexfile.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/knexfile.js): Contém a configuração necessária para a configuração no banco de dados;
- - [migrations](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/db/migrations/): Contém as migrações para criação das tabelas do banco de dados;
- - [supermarket-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/repository/supermarket-repository.js): Repositório de supermercados;
- - [product-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/repository/product-repository.js): Repositório de produtos;
- - [price-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/hello-world/repository/price-repository.js): Repositório de preços;
+ - [app.mjs](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/app.mjs): Faz a tratativa de eventos de save-data;
+ - [knexfile.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/knexfile.js): Contém a configuração necessária para a conexão com o banco de dados;
+ - [migrations](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/migration/): Contém as migrações para criação das tabelas do banco de dados;
+ - [data-mapper.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/mapper/data-mapper.js): Contém funções para conversão de modelo;
+ - [supermarket-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/supermarket-repository.js): Repositório de supermercados;
+ - [product-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/product-repository.js): Repositório de produtos;
+ - [price-repository.js](https://github.com/RicardoGPP/dwfs-abeol2-midas-save-data-lambda/blob/main/app/src/repository/price-repository.js): Repositório de preços.
 
 ## Funcionamento
 
