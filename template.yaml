@@ -49,7 +49,7 @@ Resources:
   SaveDataLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello-world/
+      CodeUri: app/
       Handler: app.lambdaHandler
       Runtime: nodejs18.x
       FunctionName: SaveDataLambdaFunction
